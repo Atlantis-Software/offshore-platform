@@ -23,6 +23,8 @@ app.route('test', {
   ]
 });
 
+app.static('test');
+
 global.port = 7850;
 app.listen(port);
 
