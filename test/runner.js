@@ -3,8 +3,9 @@ var cluster = require('cluster');
 
 global.app = platform();
 
-app.use('test:*2', function(req) {
+app.use('test:*2', function(req, next) {
   req.resolve('middleware ' + req.data.input1);
+  next();
 });
 
 app.route('test', {
